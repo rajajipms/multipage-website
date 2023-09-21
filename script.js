@@ -34,3 +34,5 @@ menuBtn.addEventListener('click', ()=>{
     })
 })
 
+console.log(x+"hgsh");
+
