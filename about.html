@@ -17,8 +17,36 @@
 		(m = window.onerror),(window.onerror = function (b, c, d, f, g) {
 		m && m(b, c, d, f, g),g || (g = new Error(b)),(w[r].q = w[r].q || []).push(["captureException",g]);})
 	}
-})(window,document,'//static.site24x7rum.com/beacon/site24x7rum-min.js?appKey=','s247r','cb01de1f72d2bec60faab6cb090444e0');
-s247r('setSamplingRate', 0.50);
+})(window,document,'https://col.localsite24x7.com/rum/resources/beacon/site24x7rum-min.js?appKey=','s247r','9f858b730a5e434d17ae15d63aff3ab7');
+try{
+    //s247r('excludeWebPages',['/', '/index.html']);
+	const allowedUrls = [
+		/.*/
+	];
+	s247r('recordSession',{
+		"trackEvents":true,
+		"trackConsoleEvents":true,
+		"captureAllWaterfalls":false,
+		"maskAllInput":false,
+		"maskAllText":true,
+		"collectNetworkDetails":true,
+		"allowedNetworkUrls": allowedUrls,
+        "allowedRequestHeaders": ['Check-Header']
+	});//No I18N
+	
+    if(site24x7.user.is_zohocorp_user){
+        s247r('userId',"zohocorp-"+site24x7.user.company_name);//No I18N
+    }else{
+        s247r('userId',site24x7.user.company_name);//No I18N
+    }
+	s247r('environment',environment);//No I18N
+	s247r('userType',userType);//No I18N	
+	s247r('trackAllSpaAjaxCalls',true);//No I18N
+	// s247r('recordSession',true);//No I18N
+    s247r('captureAllWaterfalls',true);//No I18N
+    
+}
+catch(e){}
 </script>
 
     <title>About | Nizami Sevindi</title>
