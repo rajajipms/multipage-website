@@ -50,6 +50,16 @@ document.onreadystatechange = () => {
   		default:console.log("Invalid number");break;
 	}
 }
+
+var loadResponseHTML = function(respHtml) {
+			var tContiner = document.createElement("div"); 
+			tContiner.id = "inittemplateContainer";
+			tContiner.style.display = "none";
+			tContiner.innerHTML = respHtml;
+			document.body.appendChild(tContiner);
+			isInitHtmlLoaded = true;
+		};
+
 function makeAPICallUsingFetch(){
     var url = 'https://jsonplaceholder.typicode.com/posts/1';
     callUsingFetch(url, loadResponseHTML);
