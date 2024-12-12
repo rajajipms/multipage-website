@@ -24,6 +24,32 @@
 </script> -->
 
 <script type="text/javascript">
+function makeApiCall(url) {	
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", url, true);
+	xhttp.send();	
+}
+
+document.onreadystatechange = () => {
+	
+	//simulateAJAXCalls
+	makeApiCall("https://jsonplaceholder.typicode.com/todos/1");
+	makeApiCall("https://reqres.in/api/users/2");
+	makeApiCall("script.js");
+	makeApiCall("https://gorest.co.in/public/v2/users");
+	makeApiCall("https://dummyjson.com/products/1");
+	
+	//simulateJSErrors
+	switch ((Math.floor(Math.random() * 6) + 1)) {
+  		case 1:case1();break;
+  		case 2:case2();break;
+ 		case 3:case2fail();break;
+ 		case 4:case3();break;
+  		case 5:case4();break;
+  		case 6:case5_func1();break;
+  		default:console.log("Invalid number");break;
+	}
+}
 function makeAPICallUsingFetch(){
     var url = 'https://jsonplaceholder.typicode.com/posts/1';
     callUsingFetch(url, loadResponseHTML);
