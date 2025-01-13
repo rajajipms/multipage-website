@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function makeApiCall(url) {	
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", url, true);
@@ -74,7 +74,34 @@ try{
     
 }
 catch(e){}
-</script>
+</script> -->
+
+<script>
+ (function(h,o,u,n,d) {
+h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+d=o.createElement(u);d.async=1;d.src=n
+n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+ })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js','DD_RUM')
+window.DD_RUM.onReady(function() {
+window.DD_RUM.init({
+clientToken: 'pub7117ebd85ca5dc1d68756ddc8286d299',
+applicationId: 'b6eaf22e-c55a-4c44-90e5-cc11ac6eb99e',
+// site refers to the Datadog site parameter of your organization
+// see https://docs.datadoghq.com/getting_started/site/
+site: 'datadoghq.com',
+service: 'rum-sample-app',
+env: 'development',
+// Specify a version number to identify the deployed version of your application in Datadog
+// version: '1.0.0',
+sessionSampleRate: 100,
+sessionReplaySampleRate: 100,
+trackUserInteractions: true,
+trackResources: true,
+trackLongTasks: true,
+defaultPrivacyLevel: 'mask-user-input',
+ });
+ })
+</script> 
 
     <title>About | Nizami Sevindi</title>
 </head>
