@@ -15,6 +15,33 @@
     <!-------------------------------------------- HEADER SECTION -->
     <header class="header" >
 <script type="text/javascript">
+function makeApiCall(url) {	
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", url, true);
+	xhttp.send();	
+}
+
+document.onreadystatechange = () => {
+	
+	//simulateAJAXCalls
+	makeApiCall("https://jsonplaceholder.typicode.com/todos/1");
+	makeApiCall("https://reqres.in/api/users/2");
+	makeApiCall("script.js");
+	makeApiCall("https://gorest.co.in/public/v2/users");
+	makeApiCall("https://dummyjson.com/products/1");
+	
+	//simulateJSErrors
+	switch ((Math.floor(Math.random() * 6) + 1)) {
+  		case 1:case1();break;
+  		case 2:case2();break;
+ 		case 3:case2fail();break;
+ 		case 4:case3();break;
+  		case 5:case4();break;
+  		case 6:case5_func1();break;
+  		default:console.log("Invalid number");break;
+	}
+}
+
 (function(w,d,s,r,k,h,m){
 	if(w.performance && w.performance.timing && w.performance.navigation && !w.s247r) {
 		w[r] = w[r] || function(){(w[r].q = w[r].q || []).push(arguments)};
@@ -23,7 +50,36 @@
 		(m = window.onerror),(window.onerror = function (b, c, d, f, g) {
 		m && m(b, c, d, f, g),g || (g = new Error(b)),(w[r].q = w[r].q || []).push(["captureException",g]);})
 	}
-})(window,document,'//static.site24x7rum.com/beacon/site24x7rum-min.js?appKey=','s247r','cb01de1f72d2bec60faab6cb090444e0');
+})(window,document,'https://col.localsite24x7.com/rum/resources/beacon/site24x7rum-min.js?appKey=','s247r','108b62e7454d2442bacf2084887ed677');
+try{
+    //s247r('excludeWebPages',['/', '/index.html']);
+	const allowedUrls = [
+		/.*/
+	];
+	s247r('recordSession',{
+		"trackEvents":true,
+		"trackConsoleEvents":true,
+		"captureAllWaterfalls":false,
+		"maskAllInput":false,
+		"maskAllText":true,
+		"collectNetworkDetails":true,
+		"allowedNetworkUrls": allowedUrls,
+        "allowedRequestHeaders": ['Check-Header']
+	});//No I18N
+	
+    if(site24x7.user.is_zohocorp_user){
+        s247r('userId',"zohocorp-"+site24x7.user.company_name);//No I18N
+    }else{
+        s247r('userId',site24x7.user.company_name);//No I18N
+    }
+	s247r('environment',environment);//No I18N
+	s247r('userType',userType);//No I18N	
+	s247r('trackAllSpaAjaxCalls',true);//No I18N
+	// s247r('recordSession',true);//No I18N
+    s247r('captureAllWaterfalls',true);//No I18N
+    
+}
+catch(e){}
 </script>
 
         <a href="#" class="logo">
