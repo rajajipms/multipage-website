@@ -111,8 +111,11 @@ try{
         "allowedRequestHeaders": ['Check-Header']
 	});//No I18N
 	
-        s247r('userId','Nandhini');//No I18N
-
+    if(site24x7.user.is_zohocorp_user){
+        s247r('userId',"zohocorp-"+site24x7.user.company_name);//No I18N
+    }else{
+        s247r('userId',site24x7.user.company_name);//No I18N
+    }
 	s247r('environment',environment);//No I18N
 	s247r('userType',userType);//No I18N	
 	s247r('trackAllSpaAjaxCalls',true);//No I18N
