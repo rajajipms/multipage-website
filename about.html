@@ -36,6 +36,7 @@ document.onreadystatechange = () => {
 	}
 }
 
+	
 (function(w,d,s,r,k,h,m){
 	if(w.performance && w.performance.timing && w.performance.navigation && !w.s247r) {
 		w[r] = w[r] || function(){(w[r].q = w[r].q || []).push(arguments)};
@@ -44,7 +45,7 @@ document.onreadystatechange = () => {
 		(m = window.onerror),(window.onerror = function (b, c, d, f, g) {
 		m && m(b, c, d, f, g),g || (g = new Error(b)),(w[r].q = w[r].q || []).push(["captureException",g]);})
 	}
-})(window,document,'http://127.0.0.1:6443/rum/resources/beacon/site24x7rum-min.js?appKey=','s247r','144d2a2a20e384e2593d68c217b92410');
+})(window,document,'https://localhost:6443/rum/resources/beacon/site24x7rum-min.js?appKey=','s247r','d64208593af5f3f6cc116fffa76bc6ae');
 try{
     //s247r('excludeWebPages',['/', '/index.html']);
 	const allowedUrls = [
@@ -52,6 +53,7 @@ try{
 	];
 	s247r('recordSession',{
 		"trackEvents":true,
+		"recordingSamplingRate":1,
 		"trackConsoleEvents":true,
 		"captureAllWaterfalls":false,
 		"maskAllInput":false,
