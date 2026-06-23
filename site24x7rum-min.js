@@ -14,20 +14,20 @@ if (!window.insightRUM) {
         "country_codes": [],
         "appKey": "d2b0efa149435b487ceab4b38ec2ef56",
         "geo_enabled": true,
-        "track_resources": true,
+        "track_resources": false,
         "resources_config": [],
         "mask_all_text": false,
         "ajax_enabled": true,
         "version": "",
         "excluded_useragents": [""],
-        "session_replay_sampling_threshold": 1.0,
+        "session_replay_sampling_threshold": 0.02,
         "collectorURL": "\/\/localhost:6443",
         "excluded_domains": [""],
         "excluded_web_pages": "",
         "exclude_bots": true,
-        "track_events": true,
-        "inject_trace_header": true,
-        "enable_session_replay": true
+        "track_events": false,
+        "inject_trace_header": false,
+        "enable_session_replay": false
     };
     Array.isArray || (Array.isArray = function(arg) {
         return "[object Array]" === Object.prototype.toString.call(arg)
